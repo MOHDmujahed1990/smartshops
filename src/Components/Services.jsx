@@ -25,6 +25,11 @@ export const Services = () => {
     setData(Delete);
     setOrigdata(Delete);
   };
+  const handleSave = (index, val) => {
+    const newdata = data;
+    newdata[index].title = val;
+    setData(newdata);
+  };
 
   useEffect(() => {
     getData();
@@ -50,8 +55,10 @@ export const Services = () => {
               />
             </Grid>
             <Grid item xs={2}>
-              <Card sx={{ height: 55 }}>
-                <CardContent>{origdata.length}</CardContent>
+              <Card align="center" sx={{ height: 55, bgcolor: "#1E90FF" }}>
+                <CardContent sx={{ fontSize: 30 }}>
+                  {origdata.length}
+                </CardContent>
               </Card>
             </Grid>
             <Grid item xs={2}>
@@ -85,6 +92,7 @@ export const Services = () => {
                 item={item}
                 index={index}
                 handleDelete={handleDelete}
+                handleSave={handleSave}
               />
             ))}
           </Grid>

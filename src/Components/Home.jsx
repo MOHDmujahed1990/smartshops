@@ -1,17 +1,25 @@
 import { Button, Card,CardContent } from "@mui/material";
 import React from "react";
 import {Link} from "react-router-dom"
+import { Branches } from "./Branches";
+import { Cars } from "./Cars";
+import { Emp } from "./Emp";
 
 
 export const Home=()=>{
     return(
         <React.Fragment>
-            <Card>
+            <Card sx={{bgcolor:"#EEE8AA"}}>
                 <CardContent>
-                <h1>My Home...</h1>
                 <br />
                 <br />
+                <Emp/>
                 <br />
+                <br />
+                <Cars/>
+                <br />
+                <br />
+                <Branches/>
                 <br />
                 <br />
                 <Link to="/contact">
@@ -26,6 +34,7 @@ export const Home=()=>{
                 <Link to="/help">
                    <Button variant="outlined" >Go to Help</Button>
                 </Link>
+                
                 </CardContent>
             </Card>
         </React.Fragment>
